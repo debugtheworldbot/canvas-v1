@@ -29,6 +29,11 @@
       }
 
       if ("ontouchstart" in document.documentElement) {
+        canvas.ontouchstart = (e) => {
+          let x = e.touches[0].clientX;
+          let y = e.touches[0].clientY;
+          last = [x, y];
+        };
         canvas.ontouchmove = (e) => {
           let x = e.touches[0].clientX;
           let y = e.touches[0].clientY;
